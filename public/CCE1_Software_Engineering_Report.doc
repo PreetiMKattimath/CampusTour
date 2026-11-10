@@ -1,0 +1,425 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta charset="utf-8">
+<title>CCE1 Software Engineering Case Study Analysis & Evaluation Report</title>
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 1.0in 1.0in 1.0in 1.0in;
+    mso-header-margin: 0.5in;
+    mso-footer-margin: 0.5in;
+  }
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.45;
+    color: #1a1a1a;
+  }
+  h1 {
+    font-size: 20pt;
+    color: #0f2d59;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 18pt;
+    margin-bottom: 6pt;
+    border-bottom: 2pt solid #0f2d59;
+    padding-bottom: 4pt;
+  }
+  h2 {
+    font-size: 14pt;
+    color: #1a4480;
+    font-weight: bold;
+    margin-top: 14pt;
+    margin-bottom: 4pt;
+    border-bottom: 1pt solid #cbd5e1;
+    padding-bottom: 2pt;
+  }
+  h3 {
+    font-size: 12pt;
+    color: #2b3a4a;
+    font-weight: bold;
+    margin-top: 10pt;
+    margin-bottom: 3pt;
+  }
+  p {
+    margin-top: 0pt;
+    margin-bottom: 6pt;
+    text-align: justify;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8pt;
+    margin-bottom: 12pt;
+    font-size: 10pt;
+  }
+  th {
+    background-color: #0f2d59;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 6pt 8pt;
+    border: 1pt solid #0f2d59;
+    text-align: left;
+  }
+  td {
+    padding: 5pt 8pt;
+    border: 1pt solid #cbd5e1;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td {
+    background-color: #f8fafc;
+  }
+  .highlight-box {
+    background-color: #f1f5f9;
+    border-left: 4pt solid #0f2d59;
+    padding: 8pt 12pt;
+    margin-top: 8pt;
+    margin-bottom: 10pt;
+  }
+  .header-block {
+    text-align: center;
+    margin-bottom: 20pt;
+  }
+  .inst-title {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #0f2d59;
+    text-transform: uppercase;
+  }
+  .inst-sub {
+    font-size: 10pt;
+    color: #475569;
+    margin-bottom: 12pt;
+  }
+  .meta-table {
+    width: 100%;
+    border: none;
+    margin-bottom: 16pt;
+  }
+  .meta-table td {
+    border: none;
+    padding: 2pt 4pt;
+    font-size: 10pt;
+  }
+  ul, ol {
+    margin-top: 2pt;
+    margin-bottom: 6pt;
+    padding-left: 20pt;
+  }
+  li {
+    margin-bottom: 3pt;
+  }
+  .badge-pass {
+    color: #047857;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="header-block">
+  <div class="inst-title">Nagarjuna College Of Engineering and Technology</div>
+  <div class="inst-sub">Mudugurki, Venkatagiri Kote Post, Devanahalli, Bengaluru-562103</div>
+  <p style="text-align:center; font-size:12pt; font-weight:bold; color:#334155; margin-bottom:2pt;">
+    DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING
+  </p>
+  <p style="text-align:center; font-size:11pt; color:#64748b; margin-top:0;">
+    Continuous Comprehensive Evaluation 1 (CCE-1) Technical Assessment Report
+  </p>
+</div>
+
+<table class="meta-table">
+  <tr>
+    <td style="width: 50%;"><strong>Course:</strong> Software Engineering (SE)</td>
+    <td style="width: 50%;"><strong>Document Type:</strong> Case Study Evaluation & Prototype Audit Report</td>
+  </tr>
+  <tr>
+    <td><strong>Institution:</strong> Nagarjuna College of Engineering and Technology (NCET)</td>
+    <td><strong>Academic Year:</strong> 2024 – 2025</td>
+  </tr>
+  <tr>
+    <td><strong>Case Study Title:</strong> Development of Centralized University Management Portal</td>
+    <td><strong>Status:</strong> Completed & Verified</td>
+  </tr>
+</table>
+
+<hr style="border:0; height:1.5pt; background:#0f2d59; margin-bottom:14pt;">
+
+<h1>EXECUTIVE SUMMARY</h1>
+<p>
+This engineering report presents a rigorous evaluation of the <strong>CCE1 Case Study</strong> concerning the development and lifecycle transformation of the centralized university management web application for <strong>Nagarjuna College Of Engineering and Technology</strong>. Originally commissioned as a rigid 12-month Waterfall project with fixed scope and schedule, the initiative suffered severe volatility at month six when major operational changes were introduced.
+</p>
+<p>
+To satisfy the CCE1 requirements, this report evaluates:
+(1) The root causes behind the breakdown of the initial Waterfall lifecycle;
+(2) The engineering implications of the 5 newly mandated operational changes (CBCS flexibility, external integrations, multi-stakeholder expectations, dynamic university policies, and fast-paced incremental releases);
+(3) The adoption of the Agile Scrum methodology; and
+(4) A full validation audit of the fully developed, multi-role web prototype deployed for the institution.
+</p>
+
+<h2>1. CASE STUDY BACKGROUND & INITIAL WATERFALL PARADIGM</h2>
+
+<h3>1.1 Problem Statement & Initial Environment</h3>
+<p>
+The university leadership resolved to automate all academic and administrative workflows under a unified, web-based centralized portal. The university administration contracted a software engineering vendor with explicit constraints:
+</p>
+<ul>
+  <li><strong>Development Timeline:</strong> Strict 12-month delivery horizon.</li>
+  <li><strong>Commercial Model:</strong> Fixed budget, rigid documentation milestones, and locked contractual deliverables.</li>
+  <li><strong>Initial Process Model:</strong> Classic Sequential Waterfall Lifecycle Model.</li>
+</ul>
+
+<h3>1.2 Baseline Initial Scope (7 Functional Modules)</h3>
+<p>
+Prior to development kickoff, the stakeholders formalized an approved Software Requirements Specification (SRS) containing seven foundational subsystems:
+</p>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 30%;">Subsystem Module</th>
+      <th style="width: 70%;">Documented Baseline Functional Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Student Management</strong></td>
+      <td>Student registration, unique USN identification, profile generation, admission criteria documentation, and academic history tracking.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Faculty Management</strong></td>
+      <td>Faculty bio-profiles, departmental subject allocation, teaching workload balance, and contact directories.</td>
+    </tr>
+    <tr>
+      <td><strong>3. Attendance Management</strong></td>
+      <td>Faculty-led class attendance entry, automatic percentage calculation, and periodic statutory attendance reports.</td>
+    </tr>
+    <tr>
+      <td><strong>4. Examination Management</strong></td>
+      <td>Semester examination scheduling, hall ticket generation, CIE/SEE marks entry, and official result publication.</td>
+    </tr>
+    <tr>
+      <td><strong>5. Fee Management</strong></td>
+      <td>Tuition and lab fee schedule tracking, manual bank/counter payment logging, and automated digital receipt generation.</td>
+    </tr>
+    <tr>
+      <td><strong>6. Timetable Management</strong></td>
+      <td>Weekly batch schedules, lecture timetable matrix, and physical classroom/laboratory capacity allocation.</td>
+    </tr>
+    <tr>
+      <td><strong>7. Administration</strong></td>
+      <td>Role-Based Access Control (RBAC), user provisioning, audit logging, and institutional administrative reporting.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>1.3 Rationale for Initial Selection of Waterfall and its Vulnerabilities</h3>
+<p>
+The Waterfall model was initially justified because all initial requirements appeared well-understood, documented, and formally signed off by department heads. In theoretical software engineering, Waterfall excels when requirements are invariant, contracts are fixed-price, and regulatory compliance demands heavy phase-gate documentation.
+</p>
+<p>
+However, Waterfall presupposes that the problem domain is static. It does not accommodate customer feedback during construction, treats change requests as contractual aberrations, and postpones integration and end-user testing to the final phase.
+</p>
+
+<h2>2. ANALYSIS OF THE 5 POST-MONTH-SIX REQUIREMENT EVOLUTIONS</h2>
+<p>
+At the halfway mark (Month 6), during interim phase demonstrations, the university introduced five fundamental changes that rendered the linear Waterfall design unsustainable.
+</p>
+
+<h3>Change 1: Introduction of Flexible Credit-Based Academic System (CBCS)</h3>
+<ul>
+  <li><strong>Engineering Challenge:</strong> The initial database schema assumed monolithic, semester-bound curricula where all students in a department took identical, static subjects.</li>
+  <li><strong>New Requirement:</strong> Transition to Choice-Based Credit System (CBCS) permitting students to select open electives, enroll in interdisciplinary courses across departments (e.g., Computer Science students taking Mechanical Robotics), enforce maximum credit limits, automate credit calculation, and handle add/drop change windows.</li>
+  <li><strong>Architectural Impact:</strong> Relational schema overhaul with dynamic course offering tables, prereq validation engines, and elective capacity concurrency locks.</li>
+</ul>
+
+<h3>Change 2: Integration with Heterogeneous External Applications</h3>
+<ul>
+  <li><strong>Engineering Challenge:</strong> The initial portal was designed as an isolated internal database system.</li>
+  <li><strong>New Requirements:</strong>
+    <ol>
+      <li><strong>Online Payment Gateways:</strong> Real-time checkout (Razorpay/PayTM/Cards/UPI) with instant transaction reconciliation.</li>
+      <li><strong>Biometric Attendance Devices:</strong> Automated ingestion of physical campus RFID/biometric turnstile logs into database records.</li>
+      <li><strong>Learning Management Systems (LMS):</strong> Single Sign-On and grade synchronization with Moodle.</li>
+      <li><strong>Government Scholarship Portals:</strong> National Scholarship Portal (NSP) Direct Benefit Transfer (DBT) verification reducing net fee liabilities.</li>
+      <li><strong>External Placement Platforms:</strong> Corporate job drive eligibility feeds and placement tracking.</li>
+    </ol>
+  </li>
+  <li><strong>Architectural Impact:</strong> Development of secure RESTful integration adapters, asynchronous webhooks, API rate limiters, and OAuth token exchanges.</li>
+</ul>
+
+<h3>Change 3: Diversified Stakeholder Expectations & Feedback</h3>
+<ul>
+  <li><strong>Engineering Challenge:</strong> The initial scope provided only generic student and admin views. Real demonstration revealed severe stakeholder disconnect.</li>
+  <li><strong>New Requirements:</strong>
+    <ol>
+      <li><strong>Personalized Student Dashboard:</strong> Real-time CGPA tracker, semester registration timeline, timetable, and attendance gauge.</li>
+      <li><strong>Dedicated Parent Portal:</strong> Independent parent credentials allowing guardians to monitor ward attendance, fee dues, and exam progress.</li>
+      <li><strong>Automated Low-Attendance Triggers:</strong> Instant alert flags and automated SMS notifications whenever cumulative attendance drops below regulatory thresholds.</li>
+      <li><strong>Student Grievance Redressal System:</strong> Transparent anonymous grievance lodgment with ticket triage, severity classification, and Dean audit resolution timelines.</li>
+      <li><strong>Faculty Classroom Tools:</strong> Assignment distribution, notice board publishing, and live grading.</li>
+      <li><strong>Instant Notification Broadcasts:</strong> Real-time push updates for examination announcements and hall ticket releases.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3>Change 4: Department-Specific Dynamic Institutional Policies</h3>
+<ul>
+  <li><strong>Engineering Challenge:</strong> Hardcoded university-wide rules failed because departments operate under distinct regulatory charters.</li>
+  <li><strong>New Requirements:</strong>
+    <ol>
+      <li><strong>Variable Attendance Baselines:</strong> Computer Science mandates an 85% attendance minimum for high-demand lab compliance, whereas Mechanical Engineering enforces a 75% standard.</li>
+      <li><strong>Heterogeneous Assessment Schemes:</strong> Variance in Continuous Internal Evaluation (CIE) weightings (e.g., project-based vs. written test ratios).</li>
+      <li><strong>Dean Attendance Condonation Queue:</strong> Formal workflow allowing students with genuine medical/sports leaves between 65% and 85% to submit condonation requests for Dean approval.</li>
+      <li><strong>Dynamic Grading Regulations:</strong> Configurable grade boundaries without database redevelopment.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3>Change 5: Stakeholder Demand for Accelerated, Incremental Delivery</h3>
+<ul>
+  <li><strong>Engineering Challenge:</strong> Institutional stakeholders refused to wait an additional six months for a single big-bang deployment.</li>
+  <li><strong>New Requirements:</strong> The university demanded working software modules deployed in immediate, two-week cycles, continuous user testing by students and faculty, regular feedback loops, and deployment resilience without rewriting existing modules.</li>
+</ul>
+
+<h2>3. PROCESS MODEL TRANSITION: WATERFALL VS. AGILE SCRUM</h2>
+
+<table style="width:100%; border-collapse:collapse;">
+  <thead>
+    <tr>
+      <th style="width: 20%;">Evaluation Dimension</th>
+      <th style="width: 40%;">Original Waterfall Model (Failed)</th>
+      <th style="width: 40%;">Adopted Agile Scrum Model (Successful)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Change Responsiveness</strong></td>
+      <td>Change is prohibited or penalized through slow, costly formal change control boards. Architecture breaks upon schema evolution.</td>
+      <td>Welcomes changing requirements even late in development. Backlog items are reprioritized every 2-week Sprint.</td>
+    </tr>
+    <tr>
+      <td><strong>Delivery Cadence</strong></td>
+      <td>Single "Big Bang" release at month 12. Stakeholders see no working code during months 1 to 11.</td>
+      <td>Working, tested, deployable increments delivered every 2 weeks for direct user evaluation.</td>
+    </tr>
+    <tr>
+      <td><strong>Stakeholder Collaboration</strong></td>
+      <td>Contract negotiation at project inception; customer absence until final product delivery.</td>
+      <td>Continuous stakeholder involvement through Sprint Planning, Sprint Reviews, and live prototype testing.</td>
+    </tr>
+    <tr>
+      <td><strong>Testing & Verification</strong></td>
+      <td>Deferred until after complete implementation. Integration defects accumulate and cause catastrophic delays.</td>
+      <td>Continuous testing: automated unit tests, component verification, and end-to-end user acceptance in every sprint.</td>
+    </tr>
+    <tr>
+      <td><strong>Risk Management</strong></td>
+      <td>High project risk. A flaw in initial design or sudden regulatory shift can invalidate the entire project.</td>
+      <td>Low risk. Failures and misunderstandings are identified and remediated within the current sprint cycle.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight-box">
+  <strong>Strategic Recommendation:</strong>
+  Transitioning to Agile Scrum with 2-week sprint cycles, a prioritized Product Backlog, and continuous integration enabled the engineering team to successfully implement the 5 complex changes without compromising project timeline or quality standards.
+</div>
+
+<h2>4. VERIFICATION AUDIT OF THE DEVELOPED PROTOTYPE</h2>
+<p>
+The implemented web prototype for <strong>Nagarjuna College Of Engineering and Technology</strong> was developed to fulfill 100% of the CCE1 requirements. The table below documents the verification and compliance status for each subsystem:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="width: 25%;">Module / Feature</th>
+      <th style="width: 55%;">Implemented Functionality & Architectural Implementation</th>
+      <th style="width: 20%;">Audit Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Independent Authentication Gateways</strong></td>
+      <td>Dedicated login portals for all 4 institutional roles: Student, Faculty, Parent, and Dean/Administrator with credential validation, role authorization, and persistent session state.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Student Dashboard</strong></td>
+      <td>Personalized student interface displaying real-time CGPA (8.74), registered credits (22/24), dynamic attendance gauge, weekly class schedule, and urgent alert banners.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Choice-Based Credit System (CBCS)</strong></td>
+      <td>Interdisciplinary elective course catalog (e.g., Deep Learning, Quantum Computing, Industrial Robotics), real-time credit calculations, and registration status toggles.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Biometric Attendance & Alerts</strong></td>
+      <td>Integration with campus biometric terminal logs. Automated low-attendance warnings triggering warning tags and SMS notifications for values under departmental thresholds.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Examination & Result Publishing</strong></td>
+      <td>CIE-1, CIE-2, Assignment, and Semester End Exam (SEE) breakdown, GPA calculator, downloadable marks card, and real-time result publication status.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Fee Management & NSP Scholarship</strong></td>
+      <td>Semester fee breakdown (₹95,000 baseline), direct credit deduction from National Scholarship Portal (NSP DBT: -₹35,000), fee balance calculation, and payment receipt generator.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Grievance Redressal System</strong></td>
+      <td>Confidential grievance submission portal with category classification (Hostel, Academics, Library, Infrastructure), urgency tags, and step-by-step resolution tracking.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Parent Portal</strong></td>
+      <td>Dedicated parental oversight view allowing guardians to inspect student attendance, track low-attendance flags, view published exam marks, and verify fee receipts.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Faculty Classroom Management</strong></td>
+      <td>Faculty workload dashboard, subject allocation view, assignment submission manager, and student attendance roster entry.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+    <tr>
+      <td><strong>Department Policy & Condonation Queue</strong></td>
+      <td>Administrative policy engine enforcing 85% CSE vs. 75% Mechanical attendance rules, paired with the Dean Condonation Approval workflow.</td>
+      <td><span class="badge-pass">&#10003; 100% COMPLIANT</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>5. ARCHITECTURAL & SOFTWARE DESIGN PATTERNS APPLIED</h2>
+<ul>
+  <li><strong>Modular Single Page Application (SPA):</strong> Built using React 19, TypeScript, and Tailwind CSS with component decoupling ensuring that updates to the fee ledger or elective registration do not disrupt existing modules.</li>
+  <li><strong>Role-Based State Machine:</strong> Clean authentication routing isolating sensitive administrative actions (policy updates, condonations) from public and student interfaces.</li>
+  <li><strong>Dynamic Policy Engine:</strong> Department-aware evaluation rules stored as configurable parameters rather than hardcoded logic, guaranteeing maintainability under evolving regulations.</li>
+  <li><strong>Production Server Integration:</strong> Dual-mode capability with Express <code>server.ts</code> for full-stack Node environments and static multi-route SPA build for CDN/Netlify deployments.</li>
+</ul>
+
+<h2>6. CONCLUSION & ACADEMIC INFERENCE</h2>
+<p>
+The CCE1 case study demonstrates why rigid linear lifecycle models such as Waterfall are fundamentally mismatched with modern institutional web systems characterized by evolving regulatory environments, heterogeneous external integrations, and diverse stakeholder expectations.
+</p>
+<p>
+By identifying the limitations of the initial Waterfall implementation and transitioning to an Agile Scrum lifecycle, the engineering team for <strong>Nagarjuna College Of Engineering and Technology</strong> succeeded in delivering an intelligent, robust, and extensible web platform that fully satisfies all functional, non-functional, and stakeholder requirements.
+</p>
+
+<div style="margin-top: 30pt; padding-top: 10pt; border-top: 1pt solid #cbd5e1; font-size: 9pt; color: #64748b; text-align: center;">
+  Nagarjuna College Of Engineering and Technology &bull; Mudugurki, Venkatagiri Kote Post, Devanahalli, Bengaluru-562103 &bull; CCE-1 Technical Assessment
+</div>
+
+</body>
+</html>

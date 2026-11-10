@@ -1,0 +1,6 @@
+{
+  "name": "Nagarjuna University - Academic Management Portal",
+  "description": "An intelligent academic and administrative management portal for Nagarjuna College Of Engineering and Technology (Mudugurki, Venkatagiri Kote Post, Devanahalli, Bengaluru-562103) with student, faculty, parent, and administrator workflows, credit-based registration, attendance tracking, examination grading, fee payments, and grievance management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
